@@ -1,0 +1,156 @@
+
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Liều thuốc của GenZ - âm nhạc </title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#7c3aed;--muted:#9ca3af}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,#071022 0%, #081226 50%, #071028 100%);color:#e6eef8;display:flex;align-items:center;justify-content:center;padding:40px}
+    .wrap{width:100%;max-width:980px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.7);border-radius:16px;overflow:hidden}
+    header{display:flex;gap:16px;align-items:center;padding:26px}
+    .logo{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04111a}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    main{display:grid;grid-template-columns:1fr 360px;gap:22px;padding:0 26px 26px}
+
+    article{padding:18px 0}
+    .article-card{background:rgba(255,255,255,0.01);padding:18px;border-radius:12px}
+    .article-card h2{margin:0 0 8px;font-size:18px}
+    .article-card p{color:#cfe8ff;line-height:1.6}
+
+    .gallery{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .gallery img{width:calc(50% - 5px);border-radius:8px;display:block;object-fit:cover;height:140px}
+
+    aside{padding:18px}
+    .player{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));padding:14px;border-radius:12px}
+    .controls{display:flex;align-items:center;gap:12px}
+    .btn{background:var(--accent);padding:10px 14px;border-radius:10px;border:none;color:#04111a;font-weight:700;cursor:pointer}
+    .track{margin-left:8px}
+    .audio-vis{height:8px;background:rgba(255,255,255,0.04);border-radius:8px;margin-top:10px;overflow:hidden}
+    .bar{height:100%;width:0;background:linear-gradient(90deg,rgba(255,255,255,0.15),rgba(255,255,255,0.05));transition:width 0.15s linear}
+
+    footer{padding:18px;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+    small{color:var(--muted)}
+
+    @media (max-width:940px){main{grid-template-columns:1fr}aside{order:2}header{flex-direction:row}
+    .gallery img{height:120px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">GZ</div>
+      <div>
+        <h1>Liều thuốc của GenZ - âm nhạc</h1>
+        <p class="lead">Âm nhạc không chỉ để nghe, âm nhạc còn là music !! </p>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <div class="article-card">
+          <h2>“Tôi nghe nhạc để sống sót”</h2>
+          <p>Âm nhạc là một liệu pháp tinh thần cho thế hệ Gen Z: nơi trú ẩn, nhật ký và tấm chăn ấm giữa đêm lạnh. Mở nhạc — hít thở — bước tiếp.</p>
+
+          <div class="gallery" id="gallery">
+            <img src="assets/image1.jpg" alt="ảnh 1"/>
+            <img src="assets/image2.jpg" alt="ảnh 2"/>
+            <img src="assets/image3.jpeg" alt="ảnh 3"/>
+            <img src="assets/image4.jfif" alt="ảnh 4"/>
+          </div>
+
+          <p style="margin-top:12px;color:var(--muted)"> Mẹo: Nhắn cho tôi nếu bạn muốn nghe hơn nhiều nhạc hay hơn nữa 😋😋😋</p>
+        </div>
+      </article>
+
+      <aside>
+        <div class="player">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Bản nhạc đề xuất</div>
+              <div class="track" id="trackTitle">(Chưa chọn)</div>
+            </div>
+            <div>
+              <button class="btn" id="playBtn">Play</button>
+            </div>
+          </div>
+
+          <div class="audio-vis" aria-hidden>
+            <div class="bar" id="bar"></div>
+          </div>
+
+          <audio id="audio" preload="metadata">
+            <source src="assets/music.wav" type="audio/wav">
+            Trình duyệt của bạn không hỗ trợ thẻ audio.
+          </audio>
+
+          <div style="margin-top:12px;color:var(--muted);font-size:13px">
+            <div>Chú ý: đợi tầm 5s sau khi chọn nhạc random, trình duyệt có thể chặn autoplay — người dùng cần nhấn <strong>Play</strong>.</div>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="player">
+          <div style="font-weight:700;margin-bottom:8px">Playlists / Tùy chọn</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <button class="btn" style="background:#10b981" onclick="loadTrack('assets/bản nhạc 1.mp3','Bản nhạc 1')">Chọn nhạc 1</button>
+            <button class="btn" style="background:#f59e0b" onclick="loadTrack('assets/bản nhạc 2.mp3','Bản nhạc 2')">Chọn nhạc 2</button>
+            <button class="btn" style="background:#ef4444" onclick="loadTrack('assets/bản nhạc 3.mp3','Bản nhạc 3')">Chọn nhạc 3</button>
+			<button class="btn" style="background:#de44ef" onclick="loadTrack('assets/bản nhạc 4.mp3','Bản nhạc 4')">Chọn nhạc 4</button>
+			<button class="btn" style="background:#b3ef44" onclick="loadTrack('assets/bản nhạc 5.mp3','Bản nhạc 5')">Chọn nhạc 5</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>Cảnh báo : nhạc không vừa ý bạn , vậy thì tự tìm nhé , mình có rảnh đâu ??? </small>
+      <small>© 2025</small>
+    </footer>
+  </div>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('playBtn');
+    const bar = document.getElementById('bar');
+    const trackTitle = document.getElementById('trackTitle');
+
+    let raf;
+
+    function updateBar(){
+      if(audio.duration){
+        const pct = (audio.currentTime / audio.duration) * 100;
+        bar.style.width = pct + '%';
+      }
+      raf = requestAnimationFrame(updateBar);
+    }
+
+    playBtn.addEventListener('click', ()=>{
+      if(audio.paused){
+        audio.play().catch(()=>{
+          alert('Trình duyệt chặn autoplay. Vui lòng nhấn Play lần nữa.');
+        });
+        playBtn.textContent = 'Pause';
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(updateBar);
+      } else {
+        audio.pause();
+        playBtn.textContent = 'Play';
+        cancelAnimationFrame(raf);
+      }
+    });
+
+    function loadTrack(src, title){
+      audio.src = src;
+      trackTitle.textContent = title;
+      audio.load();
+      audio.play().then(()=>{playBtn.textContent='Pause';}).catch(()=>{playBtn.textContent='Play';});
+    }
+  </script>
+</body>
+</html>
