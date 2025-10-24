@@ -1,52 +1,141 @@
-
 <!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Liều thuốc của GenZ - âm nhạc </title>
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#7c3aed;--muted:#9ca3af}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
-    body{background:linear-gradient(180deg,#071022 0%, #081226 50%, #071028 100%);color:#e6eef8;display:flex;align-items:center;justify-content:center;padding:40px}
-    .wrap{width:100%;max-width:980px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.7);border-radius:16px;overflow:hidden}
-    header{display:flex;gap:16px;align-items:center;padding:26px}
-    .logo{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04111a}
-    h1{font-size:20px;margin:0}
-    p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+  <title>KIYINNE —  Âm nhạc không chỉ để nghe, âm nhạc còn là music </title>
 
-    main{display:grid;grid-template-columns:1fr 360px;gap:22px;padding:0 26px 26px}
+<style>
+  :root{
+    --bg1: #ff5c93;
+    --bg2: #ff6fa1;
+    --bg3: #ff4081;
+    --accent: #ff2d87;
+    --muted: #ffdfee;
+    --card: rgba(255,255,255,0.15);
+  }
 
-    article{padding:18px 0}
-    .article-card{background:rgba(255,255,255,0.01);padding:18px;border-radius:12px}
-    .article-card h2{margin:0 0 8px;font-size:18px}
-    .article-card p{color:#cfe8ff;line-height:1.6}
+  html,body{
+    height:100%;
+    margin:0;
+    font-family:'Inter',system-ui,Roboto,sans-serif;
+    color:#fff;
+    scroll-behavior:smooth;
+  }
 
-    .gallery{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .gallery img{width:calc(50% - 5px);border-radius:8px;display:block;object-fit:cover;height:140px}
+  /* 🌸 Nền hồng đậm động */
+  body{
+    background:linear-gradient(-45deg,var(--bg1),var(--bg2),var(--bg3),#ff7fae);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+  @keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
 
-    aside{padding:18px}
-    .player{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));padding:14px;border-radius:12px}
-    .controls{display:flex;align-items:center;gap:12px}
-    .btn{background:var(--accent);padding:10px 14px;border-radius:10px;border:none;color:#04111a;font-weight:700;cursor:pointer}
-    .track{margin-left:8px}
-    .audio-vis{height:8px;background:rgba(255,255,255,0.04);border-radius:8px;margin-top:10px;overflow:hidden}
-    .bar{height:100%;width:0;background:linear-gradient(90deg,rgba(255,255,255,0.15),rgba(255,255,255,0.05));transition:width 0.15s linear}
+  /* 🌸 Ô chính nhạt hơn nền */
+  .wrap{
+    width:95%;
+    max-width:980px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+    border-radius:18px;
+    box-shadow:0 8px 30px rgba(255, 64, 129, 0.3);
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+  }
 
-    footer{padding:18px;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
-    small{color:var(--muted)}
+  header{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:22px;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+  }
+  .logo{
+    width:72px;
+    height:72px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:18px;
+    color:#fff;
+    background:rgba(255,255,255,0.12);
+    box-shadow:inset 0 -6px 18px rgba(255,255,255,0.06);
+  }
 
-    @media (max-width:940px){main{grid-template-columns:1fr}aside{order:2}header{flex-direction:row}
-    .gallery img{height:120px}}
+  h1{font-size:20px;margin:0;color:#fff;}
+  p.lead{margin:4px 0 0;color:#ffe6ef;font-size:13px;}
+
+  main{
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:22px;
+    padding:20px;
+    align-items:start;
+  }
+
+  article .article-card{
+    background:var(--card);
+    padding:18px;
+    border-radius:12px;
+  }
+  .article-card h2{margin:0 0 8px;color:#fff;font-size:18px;}
+  .article-card p{color:#fff;opacity:0.95;}
+  .gallery{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
+  .gallery img{width:calc(50% - 5px);height:160px;object-fit:cover;border-radius:10px;}
+
+  aside .player{
+    background:var(--card);
+    padding:16px;
+    border-radius:12px;
+  }
+
+  .btn{
+    background:linear-gradient(90deg,var(--accent),#ff7fae);
+    border:none;
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:700;
+    color:#fff;
+    cursor:pointer;
+    transition:transform .2s,opacity .3s;
+  }
+  .btn:hover{opacity:0.9;transform:scale(1.05);}
+  .audio-vis{height:8px;background:rgba(255,255,255,0.15);border-radius:8px;margin-top:12px;overflow:hidden;}
+  .bar{height:100%;width:0;background:linear-gradient(90deg,#fff,#ffb6d6);transition:width .1s linear;}
+
+  footer{
+    padding:16px;
+    border-top:1px solid rgba(255,255,255,0.05);
+    text-align:center;
+    font-size:13px;
+    color:#ffe6ef;
+  }
+
+  @media (max-width:760px){
+    main{display:block;padding:16px;}
+    .gallery img{width:100%;height:auto;}
+    .wrap{border-radius:12px;}
+  }
+</style>
+
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="logo">GZ</div>
+      <div class="logo">KIYINNE</div>
       <div>
-        <h1>Liều thuốc của GenZ - âm nhạc</h1>
-        <p class="lead">Âm nhạc không chỉ để nghe, âm nhạc còn là music !! </p>
+        <h1> Âm nhạc không chỉ để nghe, âm nhạc còn là music </h1>
+        <p class="lead">Âm nhạc & cảm xúc </p>
       </div>
     </header>
 
@@ -54,28 +143,28 @@
       <article>
         <div class="article-card">
           <h2>“Tôi nghe nhạc để sống sót”</h2>
-          <p>Âm nhạc là một liệu pháp tinh thần cho thế hệ Gen Z: nơi trú ẩn, nhật ký và tấm chăn ấm giữa đêm lạnh. Mở nhạc — hít thở — bước tiếp.</p>
+          <p>Âm nhạc là nơi trú ẩn. Hãy bật nhạc, thở sâu và để giai điệu dìu bạn qua những ngày mệt mỏi.</p>
 
           <div class="gallery" id="gallery">
-            <img src="assets/image1.JPG" alt="ảnh 1"/>
-            <img src="assets/image2.jpg" alt="ảnh 2"/>
-            <img src="assets/image3.jpeg" alt="ảnh 3"/>
-            <img src="assets/image4.jfif" alt="ảnh 4"/>
+            <!-- Thay các ảnh trong thư mục assets/ -->
+            <img src="assets/image1.jpg" alt="ảnh 1">
+            <img src="assets/image2.jpg" alt="ảnh 2">
+            <img src="assets/image3.jpeg" alt="ảnh 3">
+            <img src="assets/image4.jfif" alt="ảnh 4">
           </div>
 
-          <p style="margin-top:12px;color:var(--muted)"> Mẹo: Nhắn cho tôi nếu bạn muốn nghe hơn nhiều nhạc hay hơn nữa 😋😋😋</p>
+          <p style="margin-top:12px;color:rgba(255,255,255,0.9)">Mẹo: chọn 1 trong 5 bài random để bắt đầu ngày mới <strong> buồn hay vui </strong> </p>
         </div>
       </article>
 
       <aside>
-        <div class="player">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div style="font-weight:700">Bản nhạc đề xuất</div>
-              <div class="track" id="trackTitle">(Chưa chọn)</div>
-            </div>
-            <div>
-              <button class="btn" id="playBtn">Play</button>
+        <div class="player" role="region" aria-label="Trình phát nhạc">
+          <h3>Trình phát nhạc</h3>
+          <div style="display:flex;gap:10px;align-items:center;">
+            <button class="btn" id="playBtn">Play</button>
+            <div style="flex:1">
+              <div style="font-size:14px;color:#fff;margin-bottom:4px" id="trackTitle">Bản nhạc: (chưa chọn)</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.85)">Nhấn Play để bắt đầu , chờ 5s load nhạc  — trình duyệt có thể chặn autoplay.</div>
             </div>
           </div>
 
@@ -83,21 +172,14 @@
             <div class="bar" id="bar"></div>
           </div>
 
+          <!-- AUDIO: đặt file mp3 ở assets/music.mp3 -->
           <audio id="audio" preload="metadata">
-            <source src="assets/music.wav" type="audio/wav">
-            Trình duyệt của bạn không hỗ trợ thẻ audio.
+            <source src="assets/music.mp3" type="audio/mpeg">
+            Trình duyệt không hỗ trợ thẻ audio.
           </audio>
 
-          <div style="margin-top:12px;color:var(--muted);font-size:13px">
-            <div>Chú ý: đợi tầm 5s sau khi chọn nhạc random, trình duyệt có thể chặn autoplay — người dùng cần nhấn <strong>Play</strong>.</div>
-          </div>
-        </div>
-
-        <div style="height:14px"></div>
-
-        <div class="player">
-          <div style="font-weight:700;margin-bottom:8px">Playlists / Tùy chọn</div>
-          <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+            
             <button class="btn" style="background:#10b981" onclick="loadTrack('assets/bản nhạc 1.mp3','Bản nhạc 1')">Chọn nhạc 1</button>
             <button class="btn" style="background:#f59e0b" onclick="loadTrack('assets/bản nhạc 2.mp3','Bản nhạc 2')">Chọn nhạc 2</button>
             <button class="btn" style="background:#ef4444" onclick="loadTrack('assets/bản nhạc 3.mp3','Bản nhạc 3')">Chọn nhạc 3</button>
@@ -108,22 +190,19 @@
       </aside>
     </main>
 
-    <footer>
-      <small>Cảnh báo : nhạc không vừa ý bạn , vậy thì tự tìm nhé , mình có rảnh đâu ??? </small>
-      <small>© 2025</small>
-    </footer>
+    <footer>© 2025 KIYINNE — nghe nhac everywhere </footer>
   </div>
 
   <script>
+    // Player logic + simple progress bar
     const audio = document.getElementById('audio');
     const playBtn = document.getElementById('playBtn');
     const bar = document.getElementById('bar');
     const trackTitle = document.getElementById('trackTitle');
-
     let raf;
 
     function updateBar(){
-      if(audio.duration){
+      if(audio.duration && !isNaN(audio.duration)){
         const pct = (audio.currentTime / audio.duration) * 100;
         bar.style.width = pct + '%';
       }
@@ -132,12 +211,14 @@
 
     playBtn.addEventListener('click', ()=>{
       if(audio.paused){
-        audio.play().catch(()=>{
-          alert('Trình duyệt chặn autoplay. Vui lòng nhấn Play lần nữa.');
+        audio.play().then(()=> {
+          playBtn.textContent = 'Pause';
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(updateBar);
+        }).catch((err)=>{
+          // autoplay blocked or other error
+          alert('Trình duyệt chặn autoplay. Vui lòng nhấn Play lần nữa nếu cần.');
         });
-        playBtn.textContent = 'Pause';
-        cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(updateBar);
       } else {
         audio.pause();
         playBtn.textContent = 'Play';
@@ -147,10 +228,13 @@
 
     function loadTrack(src, title){
       audio.src = src;
-      trackTitle.textContent = title;
+      trackTitle.textContent = 'Bản nhạc: ' + title;
       audio.load();
-      audio.play().then(()=>{playBtn.textContent='Pause';}).catch(()=>{playBtn.textContent='Play';});
+      audio.play().then(()=>{ playBtn.textContent='Pause'; cancelAnimationFrame(raf); raf = requestAnimationFrame(updateBar); }).catch(()=>{ playBtn.textContent='Play';});
     }
+
+    // improve mobile tap area: ensure clickable
+    playBtn.addEventListener('touchstart', ()=>{ /* improve responsiveness on iOS */ }, {passive:true});
   </script>
 </body>
 </html>
