@@ -1,11 +1,11 @@
+
 <!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
-  <title>KIYINNE —  Âm nhạc không chỉ để nghe, âm nhạc còn là music </title>
-
-<style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Liều thuốc của GenZ - âm nhạc </title>
+ <style>
   :root{
     --bg1: #ff5c93;
     --bg2: #ff6fa1;
@@ -132,10 +132,10 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="logo">KIYINNE</div>
+      <div class="logo">GZ</div>
       <div>
-        <h1> Âm nhạc không chỉ để nghe, âm nhạc còn là music </h1>
-        <p class="lead">Âm nhạc & cảm xúc </p>
+        <h1>Liều thuốc của GenZ - âm nhạc</h1>
+        <p class="lead">Âm nhạc không chỉ để nghe, âm nhạc còn là music !! </p>
       </div>
     </header>
 
@@ -143,28 +143,28 @@
       <article>
         <div class="article-card">
           <h2>“Tôi nghe nhạc để sống sót”</h2>
-          <p>Âm nhạc là nơi trú ẩn. Hãy bật nhạc, thở sâu và để giai điệu dìu bạn qua những ngày mệt mỏi.</p>
+          <p>Âm nhạc là một liệu pháp tinh thần cho thế hệ Gen Z: nơi trú ẩn, nhật ký và tấm chăn ấm giữa đêm lạnh. Mở nhạc — hít thở — bước tiếp.</p>
 
           <div class="gallery" id="gallery">
-            <!-- Thay các ảnh trong thư mục assets/ -->
-            <img src="assets/image1.jpg" alt="ảnh 1">
-            <img src="assets/image2.jpg" alt="ảnh 2">
-            <img src="assets/image3.jpeg" alt="ảnh 3">
-            <img src="assets/image4.jfif" alt="ảnh 4">
+            <img src="assets/image1.JPG" alt="ảnh 1"/>
+            <img src="assets/image2.jpg" alt="ảnh 2"/>
+            <img src="assets/image3.jpeg" alt="ảnh 3"/>
+            <img src="assets/image4.jfif" alt="ảnh 4"/>
           </div>
 
-          <p style="margin-top:12px;color:rgba(255,255,255,0.9)">Mẹo: chọn 1 trong 5 bài random để bắt đầu ngày mới <strong> buồn hay vui </strong> </p>
+          <p style="margin-top:12px;color:var(--muted)"> Mẹo: Nhắn cho tôi nếu bạn muốn nghe hơn nhiều nhạc hay hơn nữa 😋😋😋</p>
         </div>
       </article>
 
       <aside>
-        <div class="player" role="region" aria-label="Trình phát nhạc">
-          <h3>Trình phát nhạc</h3>
-          <div style="display:flex;gap:10px;align-items:center;">
-            <button class="btn" id="playBtn">Play</button>
-            <div style="flex:1">
-              <div style="font-size:14px;color:#fff;margin-bottom:4px" id="trackTitle">Bản nhạc: (chưa chọn)</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.85)">Nhấn Play để bắt đầu , chờ 5s load nhạc  — trình duyệt có thể chặn autoplay.</div>
+        <div class="player">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Bản nhạc đề xuất</div>
+              <div class="track" id="trackTitle">(Chưa chọn)</div>
+            </div>
+            <div>
+              <button class="btn" id="playBtn">Play</button>
             </div>
           </div>
 
@@ -172,14 +172,21 @@
             <div class="bar" id="bar"></div>
           </div>
 
-          <!-- AUDIO: đặt file mp3 ở assets/music.mp3 -->
           <audio id="audio" preload="metadata">
-            <source src="assets/music.mp3" type="audio/mpeg">
-            Trình duyệt không hỗ trợ thẻ audio.
+            <source src="assets/music.wav" type="audio/wav">
+            Trình duyệt của bạn không hỗ trợ thẻ audio.
           </audio>
 
-          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
-            
+          <div style="margin-top:12px;color:var(--muted);font-size:13px">
+            <div>Chú ý: đợi tầm 5s sau khi chọn nhạc random, trình duyệt có thể chặn autoplay — người dùng cần nhấn <strong>Play</strong>.</div>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="player">
+          <div style="font-weight:700;margin-bottom:8px">Playlists / Tùy chọn</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
             <button class="btn" style="background:#10b981" onclick="loadTrack('assets/bản nhạc 1.mp3','Bản nhạc 1')">Chọn nhạc 1</button>
             <button class="btn" style="background:#f59e0b" onclick="loadTrack('assets/bản nhạc 2.mp3','Bản nhạc 2')">Chọn nhạc 2</button>
             <button class="btn" style="background:#ef4444" onclick="loadTrack('assets/bản nhạc 3.mp3','Bản nhạc 3')">Chọn nhạc 3</button>
@@ -190,19 +197,22 @@
       </aside>
     </main>
 
-    <footer>© 2025 KIYINNE — nghe nhac everywhere </footer>
+    <footer>
+      <small>Cảnh báo : nhạc không vừa ý bạn , vậy thì tự tìm nhé , mình có rảnh đâu ??? </small>
+      <small>© 2025</small>
+    </footer>
   </div>
 
   <script>
-    // Player logic + simple progress bar
     const audio = document.getElementById('audio');
     const playBtn = document.getElementById('playBtn');
     const bar = document.getElementById('bar');
     const trackTitle = document.getElementById('trackTitle');
+
     let raf;
 
     function updateBar(){
-      if(audio.duration && !isNaN(audio.duration)){
+      if(audio.duration){
         const pct = (audio.currentTime / audio.duration) * 100;
         bar.style.width = pct + '%';
       }
@@ -211,14 +221,12 @@
 
     playBtn.addEventListener('click', ()=>{
       if(audio.paused){
-        audio.play().then(()=> {
-          playBtn.textContent = 'Pause';
-          cancelAnimationFrame(raf);
-          raf = requestAnimationFrame(updateBar);
-        }).catch((err)=>{
-          // autoplay blocked or other error
-          alert('Trình duyệt chặn autoplay. Vui lòng nhấn Play lần nữa nếu cần.');
+        audio.play().catch(()=>{
+          alert('Trình duyệt chặn autoplay. Vui lòng nhấn Play lần nữa.');
         });
+        playBtn.textContent = 'Pause';
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(updateBar);
       } else {
         audio.pause();
         playBtn.textContent = 'Play';
@@ -228,13 +236,10 @@
 
     function loadTrack(src, title){
       audio.src = src;
-      trackTitle.textContent = 'Bản nhạc: ' + title;
+      trackTitle.textContent = title;
       audio.load();
-      audio.play().then(()=>{ playBtn.textContent='Pause'; cancelAnimationFrame(raf); raf = requestAnimationFrame(updateBar); }).catch(()=>{ playBtn.textContent='Play';});
+      audio.play().then(()=>{playBtn.textContent='Pause';}).catch(()=>{playBtn.textContent='Play';});
     }
-
-    // improve mobile tap area: ensure clickable
-    playBtn.addEventListener('touchstart', ()=>{ /* improve responsiveness on iOS */ }, {passive:true});
   </script>
 </body>
 </html>
